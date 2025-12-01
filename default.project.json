@@ -5,9 +5,6 @@
 		"Plugin": {
 			"$path": "src"
 		},
-		"Packages": {
-			"$path": "roblox_packages"
-		},
 		"LICENSE": {
 			"$path": "LICENSE.luau"
 		}

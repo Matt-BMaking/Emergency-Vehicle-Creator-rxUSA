@@ -37,10 +37,10 @@ local function getName(name: string): string
 	return name
 end
 
-local name = getName("Emergency Vehicle Creator V3")
+local name = getName("rxUSA Emergency Vehicle Creator V3")
 local description = "Easily create emergency vehicles with this plugin!"
 local pluginIcon = "http://www.roblox.com/asset/?id=9953243250"
-local buttonName = getName("EVC")
+local buttonName = getName("rxEVC")
 
 local button: PluginToolbarButton
 -- TODO: Find a better way to make a global toolbar
