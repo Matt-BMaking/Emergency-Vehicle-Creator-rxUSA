@@ -47,7 +47,7 @@ type vehicle = {
 		},
 	},
 	cache: { [string]: vehicleFolder },
-	isValidVehicle: (self: vehicle, vehicle: Instance) -> false | "a" | "ag" | "mg" | "m",
+	isValidVehicle: (self: vehicle, vehicle: Instance) -> false | "a" | "ag" | "mg" | "m" | "o",
 	isVehicleCustomizable: (self: vehicle, vehicle: Instance) -> boolean,
 	getOutfitting: (self: vehicle, vehicle: Instance) -> { model: Model, basePoint: BasePart }?,
 	_setupVehicle: (self: vehicle, vehicleName: string, vehicleModule: any, vehicleFolder: Folder) -> vehicleFolder?,
@@ -121,6 +121,12 @@ function vehicle.isValidVehicle(_, vehicleToCheck)
 		if tune then
 			return "m"
 		end
+
+		-- Detect Okami Chassis
+		tune = vehicleToCheck:HasTag("Okami_Chassis")
+		if tune then
+			return "o"
+		end
 	end
 	return false
 end
@@ -135,15 +141,15 @@ end
 
 --- Retrieves the outfitting model and base point for a vehicle.
 function vehicle.getOutfitting(_, vehicleToCheck)
-	local carBody = vehicleToCheck:FindFirstChild("Body")
+	local carBody = vehicleToCheck:FindFirstChild("Body", true)
 	if carBody == nil then
 		return
 	end
-	local carOutfitting = carBody:FindFirstChild("Outfitting") :: Model?
+	local carOutfitting = carBody:FindFirstChild("Outfitting", true) :: Model?
 	if carOutfitting == nil or carOutfitting:IsA("Model") == false then
 		return
 	end
-	local carBasePoint = carOutfitting:FindFirstChild("BasePoint") :: BasePart?
+	local carBasePoint = carOutfitting:FindFirstChild("BasePoint", true) :: BasePart?
 	if carBasePoint == nil or carBasePoint:IsA("BasePart") == false then
 		return
 	end

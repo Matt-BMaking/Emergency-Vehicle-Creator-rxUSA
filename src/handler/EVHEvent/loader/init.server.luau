@@ -107,7 +107,7 @@ end
 
 local function load()
 	car = EVHEvent.Parent :: Model
-	local possibleDriveSeat = car:WaitForChild("DriveSeat")
+	local possibleDriveSeat = car:WaitForChild("DriveSeat") or car:FindFirstChild("VehicleSeat", true)
 	if possibleDriveSeat:IsA("VehicleSeat") == false then
 		return
 	end
@@ -336,14 +336,14 @@ local function load()
 	end
 
 	-- AG-Chassis Handling
-	local Body = car:FindFirstChild("Body")
+	local Body = car:FindFirstChild("Body", true)
 	if Body then
-		local ELS = Body:FindFirstChild("ELS")
+		local ELS = Body:FindFirstChild("ELS", true)
 		if ELS then
-			local PTRNS = ELS:FindFirstChild("PTRNS")
+			local PTRNS = ELS:FindFirstChild("PTRNS", true)
 			if PTRNS then
-				local ELSRunning = PTRNS:FindFirstChild("ELSRunning")
-				local PatternNumber = PTRNS:FindFirstChild("PatternNumber")
+				local ELSRunning = PTRNS:FindFirstChild("ELSRunning", true)
+				local PatternNumber = PTRNS:FindFirstChild("PatternNumber", true)
 				if ELSRunning and ELSRunning:IsA("BoolValue") and PatternNumber and PatternNumber:IsA("IntValue") then
 					local function AGELSChange()
 						for _, currentFunction in functions do
@@ -364,8 +364,8 @@ local function load()
 					AGELSChange()
 				end
 
-				local TARunning = PTRNS:FindFirstChild("TARunning")
-				local TAPatternNumber = PTRNS:FindFirstChild("TAPatternNumber")
+				local TARunning = PTRNS:FindFirstChild("TARunning", true)
+				local TAPatternNumber = PTRNS:FindFirstChild("TAPatternNumber", true)
 				if TARunning and TARunning:IsA("BoolValue") and TAPatternNumber and TAPatternNumber:IsA("IntValue") then
 					local function AGTAChange()
 						for _, currentFunction in functions do

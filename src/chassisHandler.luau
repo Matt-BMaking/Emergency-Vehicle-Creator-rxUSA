@@ -166,12 +166,14 @@ function chassisHandler.hasPluginInstalled(self: chassisHandler, model: Model): 
 		tune = model:FindFirstChild("Tuner")
 	elseif vehicleType == "mg" then
 		tune = model:FindFirstChild("MG-Chassis tune")
+	elseif vehicleType == "o" then
+		tune = model
 	end
 
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins")
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
 	if plugins == nil then
 		return false
 	end
@@ -198,12 +200,14 @@ function chassisHandler.hasEVCChassisPluginInstalled(_: chassisHandler, model: M
 		tune = model:FindFirstChild("Tuner")
 	elseif vehicleType == "mg" then
 		tune = model:FindFirstChild("MG-Chassis tune")
+	elseif vehicleType == "o" then
+		tune = model
 	end
 
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins")
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
 	if plugins == nil then
 		return false
 	end
@@ -249,20 +253,23 @@ function chassisHandler.installPlugin(self: chassisHandler, model: Model): boole
 		tune = model:FindFirstChild("Tuner")
 	elseif vehicleType == "mg" then
 		tune = model:FindFirstChild("MG-Chassis tune")
+	elseif vehicleType == "o" then
+		tune = model
 	end
 
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins")
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
 	if plugins == nil then
 		return false
 	end
 
 	local newHandler = script.Parent.handler:Clone()
-	newHandler.Name = "Emergency Vehicle Handler"
+	newHandler.Name = "rxUSA Emergency Vehicle Handler"
 
 	local isOldPluginInstalled, oldPlugin = self:hasEVCChassisPluginInstalled(model)
+--[[
 	if isOldPluginInstalled == true and oldPlugin ~= nil then
 		local oldSettings = oldPlugin:FindFirstChild("Settings", true) :: ModuleScript?
 		if oldSettings == nil then
@@ -503,6 +510,7 @@ function chassisHandler.installPlugin(self: chassisHandler, model: Model): boole
 
 		oldPlugin:Destroy()
 	end
+]]
 
 	newHandler.Parent = plugins
 	newHandler.Enabled = true
