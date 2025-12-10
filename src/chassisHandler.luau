@@ -173,7 +173,7 @@ function chassisHandler.hasPluginInstalled(self: chassisHandler, model: Model): 
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild("Scripts")
 	if plugins == nil then
 		return false
 	end
@@ -207,7 +207,7 @@ function chassisHandler.hasEVCChassisPluginInstalled(_: chassisHandler, model: M
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild("Scripts")
 	if plugins == nil then
 		return false
 	end
@@ -260,7 +260,7 @@ function chassisHandler.installPlugin(self: chassisHandler, model: Model): boole
 	if tune == nil then
 		return false
 	end
-	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild(“Scripts”)
+	local plugins = tune:FindFirstChild("Plugins") or tune:FindFirstChild("Scripts")
 	if plugins == nil then
 		return false
 	end

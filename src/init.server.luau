@@ -53,7 +53,7 @@ if _G.RTPlugins and typeof(_G.RTPlugins) == "table" then
 	end
 else
 	_G.RTPlugins = {
-		ToolBar = plugin:CreateToolbar("Redon Tech Plugins"),
+		ToolBar = plugin:CreateToolbar("rxUSA Plugins"),
 		Buttons = {},
 	}
 
