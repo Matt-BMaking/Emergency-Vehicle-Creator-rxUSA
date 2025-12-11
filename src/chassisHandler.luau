@@ -177,7 +177,7 @@ function chassisHandler.hasPluginInstalled(self: chassisHandler, model: Model): 
 	if plugins == nil then
 		return false
 	end
-	local Plugin = plugins:FindFirstChild("Emergency Vehicle Handler") :: LocalScript?
+	local Plugin = plugins:FindFirstChild("rxUSA Emergency Vehicle Handler") :: LocalScript?
 	if Plugin == nil or Plugin:IsA("LocalScript") == false then
 		return false
 	end

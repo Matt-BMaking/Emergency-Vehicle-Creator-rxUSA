@@ -107,7 +107,7 @@ end
 
 local function load()
 	car = EVHEvent.Parent :: Model
-	local possibleDriveSeat = car:WaitForChild("DriveSeat") or car:FindFirstChild("VehicleSeat", true)
+	local possibleDriveSeat = car:FindFirstChild("VehicleSeat", true)
 	if possibleDriveSeat:IsA("VehicleSeat") == false then
 		return
 	end

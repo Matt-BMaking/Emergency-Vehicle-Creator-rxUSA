@@ -10,7 +10,7 @@ return function(vehicle: Instance): types.vehicle?
 		return
 	end
 
-	local EVHEvent = vehicle:WaitForChild("EVHEvent")
+	local EVHEvent = vehicle:FindFirstChild("EVHEvent", true)
 
 	local configuration = EVHEvent:WaitForChild("configuration")
 
