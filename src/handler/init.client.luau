@@ -37,13 +37,9 @@ if plugin then
 end
 
 local UserInputService = game:GetService("UserInputService")
-local CarReference = script.Parent:WaitForChild("Car")
 local Values = script.Parent:WaitForChild("Values")
-if CarReference:IsA("ObjectValue") == false then
-	error("[EVH ERROR]: Car ObjectValue not valid")
-end
 
-local Car = CarReference.Value :: Model
+local Car = script.Parent.Parent
 local EVHEvent = Car:WaitForChild("EVHEvent") :: RemoteEvent
 if EVHEvent:IsA("RemoteEvent") == false then
 	error("[EVH ERROR]: EVHEvent RemoteEvent not valid")
