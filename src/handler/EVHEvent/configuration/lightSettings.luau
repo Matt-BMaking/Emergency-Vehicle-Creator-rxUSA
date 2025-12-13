@@ -8,21 +8,21 @@ return {
 	colors = {
 		{
 			name = "Blue",
-			partColor = Color3.fromRGB(110, 153, 202),
-			lightColor = Color3.fromRGB(0, 0, 255),
-			lightoColor = Color3.fromRGB(47, 71, 255),
+			partColor = Color3.fromRGB(93, 100, 233),
+			lightColor = Color3.fromRGB(41, 59, 175),
+			lightoColor = Color3.fromRGB(52, 63, 233),
 		},
 		{
 			name = "Red",
-			partColor = Color3.fromRGB(190, 104, 98),
-			lightColor = Color3.fromRGB(255, 0, 0),
-			lightoColor = Color3.fromRGB(185, 58, 60),
+			partColor = Color3.fromRGB(232, 94, 94),
+			lightColor = Color3.fromRGB(196, 40, 28),
+			lightoColor = Color3.fromRGB(225, 52, 52),
 		},
 		{
 			name = "Yellow",
-			partColor = Color3.fromRGB(226, 155, 64),
-			lightColor = Color3.fromRGB(255, 200, 0),
-			lightoColor = Color3.fromRGB(253, 194, 66),
+			partColor = Color3.fromRGB(227, 139, 92),
+			lightColor = Color3.fromRGB(213, 115, 61),
+			lightoColor = Color3.fromRGB(227, 114, 53),
 		},
 		{
 			name = "White",
